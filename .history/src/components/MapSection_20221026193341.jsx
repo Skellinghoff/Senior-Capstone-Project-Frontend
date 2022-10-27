@@ -1,21 +1,6 @@
 import React from 'react'
 import FilterItem from './FilterItem'
 import { Component } from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-
-// Style for the map
-const containerStyle = {
-    width: '2500px',
-    height: '1100px'
-  };
-  
-  const center = {
-
-    //school coordinate
-    lat: 33.592320,
-    lng: -101.886645
-  };
-
 
 class MapSection extends Component {
     //handles hiding and showing sidebar
@@ -27,22 +12,11 @@ class MapSection extends Component {
     render() {
         return (
             <section className='map-content'>
-                <LoadScript  //
-             //Google api Key (will be moved in the .env file later )
-                googleMapsApiKey="AIzaSyDD9qFIefu1Po1AbhLBFpv0bz6gEa5C4Ng"
-            >
-            <GoogleMap
-            
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={16}
-            >
-           
-          { /* Child components, such as markers, info windows, etc. */ }
-          <></>
-          
-            </GoogleMap>
-            </LoadScript>
+                <div id='map'>
+                    {
+                        //Put google map stuff here
+                    }
+                </div>
                 <div className="controls">
                     <span className={this.state.clicked ? "topper" : "topper hidden"} onClick={this.handleClick}>
                         <i id="toggle-button" className={this.state.clicked ? "fa-solid fa-caret-right" : "fa-solid fa-caret-left"}></i>
