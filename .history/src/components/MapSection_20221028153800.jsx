@@ -16,7 +16,6 @@ const containerStyle = {
     lng: -101.886645
   };
 
-  //map style that remove most of the markers
   const options = 
   {
     mapId : "a85ba04dc198c93d"
