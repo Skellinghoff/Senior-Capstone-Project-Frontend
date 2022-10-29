@@ -1,6 +1,14 @@
 import React from 'react'
+import { useState } from "react";
 
 const FilterItem = (props) => {
+
+    const [switched, setSwitched] = useState(true)
+    const toggleSwitch = () => {
+        setSwitched((switched) => !switched)
+    }
+
+
     return (
         <div className='list-item'>
             <div>
@@ -8,7 +16,7 @@ const FilterItem = (props) => {
                 <p>{props.label}</p>
             </div>
             <label className="switch">
-                <input type="checkbox" />
+                <input type="checkbox" defaultChecked={switched} onClick={() => { toggleSwitch(); props.toggle(props.category, switched); }} />
                 <span className="slider round"></span>
             </label>
         </div>
