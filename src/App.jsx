@@ -1,12 +1,20 @@
 import Header from './components/Header.jsx'
 import MapSection from './components/MapSection.jsx'
 import Footer from './components/Footer.jsx'
-import InfoPopup from './InfoPopup.jsx'
 import Signin from './components/Signin.jsx'
 import React from 'react'
 import locationData from "./location-data.json"
 
 function App() {
+
+    //signed in user
+    const [user, setuser] = React.useState(null)
+    const [open, setopen] = React.useState(null)
+    const toggleOpen = (state) => {
+        setopen(state)
+        document.getElementsByName("uname")[0].value = "";
+        document.getElementsByName("pass")[0].value = "";
+    }
 
     //used to focus on selected markers and center map on start
     const [MCenter, setMCenter] = React.useState({
@@ -18,24 +26,59 @@ function App() {
     //handles filters hiding and showing markers
     const [locationMarkers, setLocationMarkers] = React.useState(locationData)
     function toggle(category, switched) {
+        // filter has been swtiched off
         if (switched === true) {
             setLocationMarkers(prevLocationMarkers => {
                 return prevLocationMarkers.map((location) => {
                     activeMarker && category === activeMarker.category ? setActiveMarker(null) : null
-                    return location.category === category ? { ...location, visible: false } : location
+                    activeMarker && user && user.favorites.indexOf(activeMarker.id) != -1 ? setActiveMarker(null) : null
+                    if (category != "favorites" && user && user.favorites.indexOf(location.id) != -1) {
+                        return location
+                    }
+                    if (location.category === category) {
+                        return { ...location, visible: false }
+                    } else if (category == "favorites" && user && user.favorites.indexOf(location.id) != -1) {
+                        return { ...location, visible: false }
+                    } else {
+                        return location
+                    }
                 })
             })
+            // filter has been switched on
         } else {
             setLocationMarkers(prevLocationMarkers => {
                 return prevLocationMarkers.map((location) => {
-                    return location.category === category ? { ...location, visible: true } : location
+                    if (category != "favorites" && user && user.favorites.indexOf(location.id) != -1) {
+                        return location
+                    }
+                    if (location.category === category) {
+                        return { ...location, visible: true }
+                    } else if (category == "favorites" && user && user.favorites.indexOf(location.id) != -1) {
+                        return { ...location, visible: true }
+                    } else {
+                        return location
+                    }
                 })
             })
         }
 
     }
 
-    const [popInfo, setPopInfo] = React.useState(null)
+    function favoriteLocation(id) {
+        if (user) {
+            let newFavorites = user.favorites
+            newFavorites.push(id)
+            setuser({ ...user, favorites: newFavorites })
+        }
+    }
+
+    function unFavoriteLocation(id) {
+        if (user) {
+            let newFavorites = user.favorites
+            newFavorites.splice(newFavorites.indexOf(id), 1)
+            setuser({ ...user, favorites: newFavorites })
+        }
+    }
 
     //handles selecting a marker
     const [activeMarker, setActiveMarker] = React.useState(null)
@@ -53,7 +96,8 @@ function App() {
 
     return (
         <div className="container">
-            <Header />
+            <Header user={user} setopen={toggleOpen} setuser={setuser} />
+            <Signin open={open} setopen={toggleOpen} setuser={setuser} />
             <MapSection center={MCenter}
                 callBack={setMCenter}
                 zoom={zoomLevel}
@@ -61,8 +105,12 @@ function App() {
                 toggle={toggle}
                 locationMarkers={locationMarkers}
                 setActiveMarker={setActiveMarker}
-                activeMarker={activeMarker} />
-            <Footer callBack={setMCenter} zoomCallBack={setZoomLevel} dropToggle={dropToggle} />
+                activeMarker={activeMarker}
+                user={user}
+                data={locationData}
+                favoriteLocation={favoriteLocation}
+                unFavoriteLocation={unFavoriteLocation} />
+            <Footer callBack={setMCenter} zoomCallBack={setZoomLevel} dropToggle={dropToggle} user={user} />
         </div>)
 }
 

@@ -10,28 +10,39 @@ const Dropdown = (props) => {
         setopen(!open)
     }
 
-    const [dropdownLocations, setDropdownLocations] = useState(locationData.map(location => {
-        return location.category == props.category ? <DropdownItem key={location.id}
-            id={location.id}
-            abbrev={location.abbrev}
-            name={location.name}
-            callBack={props.callBack}
-            zoomCallBack={props.zoomCallBack}
-            dropToggle={props.dropToggle}
-            Mlat={location.lat}
-            Mlng={location.lng}
-        /> : null
-    }))
-
-    if (dropdownLocations.every(value => value === null)) {
-        setDropdownLocations([<DropdownItem name="Empty" />])
-    }
+    const dropdownLocations = locationData.map(location => {
+        if (location.category == props.category) {
+            return <DropdownItem key={location.id}
+                id={location.id}
+                abbrev={location.abbrev}
+                name={location.name}
+                callBack={props.callBack}
+                zoomCallBack={props.zoomCallBack}
+                dropToggle={props.dropToggle}
+                Mlat={location.lat}
+                Mlng={location.lng}
+            />
+        } else if (props.category == "favorites" && props.user && props.user.favorites.indexOf(location.id) != -1) {
+            return <DropdownItem key={location.id}
+                id={location.id}
+                abbrev={location.abbrev}
+                name={location.name}
+                callBack={props.callBack}
+                zoomCallBack={props.zoomCallBack}
+                dropToggle={props.dropToggle}
+                Mlat={location.lat}
+                Mlng={location.lng}
+            />
+        } else {
+            return null
+        }
+    })
 
     return (
         <div className="dropdown">
             <p className={open ? "active" : "closed"} onClick={toggleOpen}><i className={open ? "fa-solid fa-caret-up" : "fa-solid fa-caret-down"}></i>{props.headertext}</p>
             <ul className={open ? "dropdown-list" : "dropdown-list hidden"}>
-                {dropdownLocations}
+                {dropdownLocations.every(loc => loc === null) ? <DropdownItem name="Empty" /> : dropdownLocations}
             </ul>
         </div>
     )

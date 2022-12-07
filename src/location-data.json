@@ -8,8 +8,7 @@
         "description": "The Carpenter/Wells Complex features 3 and 4 bedroom suite-style residences for men and women of sophomore classification or higher. The complex is open year round for the convenience of residents. Students share a suite with students of the same gender.",
         "category": "residence",
         "image": "src/components/images/carpwells.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "2",
@@ -20,8 +19,7 @@
         "description": "The building houses the Department Chemical Engineering classrooms, research labs and administrative offices.",
         "category": "lecture",
         "image": "src/components/images/cheme.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "3",
@@ -32,8 +30,7 @@
         "description": "The building is home to the Department of Chemistry and Biochemistry classrooms, research labs and administrative offices.",
         "category": "lecture",
         "image": "src/components/images/chem.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "4",
@@ -44,8 +41,7 @@
         "description": "Dining location in Gordon Hall, serves breakfast, lunch and dinner.",
         "category": "dining",
         "image": "src/components/images/gordon.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "5",
@@ -56,8 +52,7 @@
         "description": "Sneed Hall is a residence hall for men. It is home to the Engineering Success and Men of STEM Learning Communities.",
         "category": "residence",
         "image": "src/components/images/sneed.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "6",
@@ -68,8 +63,7 @@
         "description": "Talkington Hall offers 2 and 4 bedroom suite-style residences for men and women of any classification. Students share a suite with students of the same gender.",
         "category": "residence",
         "image": "src/components/images/talkington.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "7",
@@ -80,8 +74,7 @@
         "description": "The Commons brings cutting-edge dining to the Texas Tech community. A 20,500 square foot, two-story, stand-alone dining facility, The Commons features various food outlets, including Einstein Bros® Bagels, Khan's Mongolian Grill and others.",
         "category": "dining",
         "image": "src/components/images/commons.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "8",
@@ -92,8 +85,7 @@
         "description": "The Student Union Building houses a food court, Barnes & Noble Bookstore, Starbucks, the Allen Theatre, Student Government Association and work space for many of the more than 400 student organizations.",
         "category": "dining",
         "image": "src/components/images/sub.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "9",
@@ -104,8 +96,7 @@
         "description": "The building houses the Department of Agricultural Education and Communications which offers undergraduate and graduate degrees.",
         "category": "lecture",
         "image": "src/components/images/aged.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "10",
@@ -116,8 +107,7 @@
         "description": "Holden Hall houses the College of Arts and Sciences administrative offices and classrooms. The original building features a 1,300 square-foot fresco mural by renowned painter Peter Hurd.",
         "category": "lecture",
         "image": "src/components/images/holden.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "11",
@@ -128,8 +118,7 @@
         "description": "The English/Philosophy building opened in 2002. The building faces the Education building across a large courtyard. The two buildings mirror each other in architectural design.",
         "category": "lecture",
         "image": "src/components/images/engphl.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "12",
@@ -140,8 +129,7 @@
         "description": "Eastern campus entry station. Entering campus by car is prohibited between the hours of 7:30am - 5:30pm on weekdays. Visitor information and passes are available.",
         "category": "pin_r",
         "image": "",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "13",
@@ -152,8 +140,7 @@
         "description": "North eastern campus entry station. Entering campus by car is prohibited between the hours of 7:30am - 5:30pm on weekdays. Visitor information and passes are available.",
         "category": "pin_r",
         "image": "",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "14",
@@ -164,8 +151,7 @@
         "description": "Western campus entry station. Entering campus by car is prohibited between the hours of 7:30am - 5:30pm on weekdays. Visitor information and passes are available.",
         "category": "pin_r",
         "image": "",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "15",
@@ -176,8 +162,7 @@
         "description": "The Robert H. Ewalt Student Recreation Center features a raised jogging track, volleyball/basketball courts and weight room facilities. The climbing, outdoor pursuits and aquatic centers are also found here.",
         "category": "pin_o",
         "image": "src/components/images/src.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "16",
@@ -188,8 +173,7 @@
         "description": "Memorial Circle was dedicated in 1948 to all Texas Tech students who served in World War II. The Pfluger Fountain was added to the center of the circle in 2002.",
         "category": "pin_o",
         "image": "src/components/images/memcircle.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "17",
@@ -200,8 +184,7 @@
         "description": "Glenna Goodacre, Park Place, 1997, Bronze",
         "category": "pin_g",
         "image": "src/components/images/park-place.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     },
     {
         "id": "18",
@@ -212,7 +195,6 @@
         "description": "Jesus Moroles, Lapstrake, 2005, Granite",
         "category": "pin_g",
         "image": "src/components/images/lapstrake.jpg",
-        "visible": true,
-        "favorite": ""
+        "visible": true
     }
 ]
